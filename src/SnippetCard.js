@@ -27,7 +27,7 @@ function SnippetCard({snippet, onDelete, onEdit, onPin}) {
             ) : (
                 <div>
                     <h3>{snippet.title}</h3>
-                    <pre>{snippet.content}</pre>
+                    <div className="snippet-content">{snippet.content}</div>
                     <p><strong>Category: </strong>{snippet.category}</p>
                     <button onClick={() => onPin(snippet.id)}>
                             {snippet.pinned ? 'Unpin' : 'Pin'}

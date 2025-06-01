@@ -30,22 +30,29 @@ function App() {
 
   return(
     <div className="App">
-      <h1>SnippetHub!🚀 </h1>
+      <h1>📚 SnippetHub! </h1>
       <SnippetForm onAdd={addSnippet} />
+      
+      <div className='SnippetSections'>
+        <div className='PinnedSection'>
+        <h2>📌 Pinned Snippets</h2>
+        <div className="SnippetList1">
+          {snippets.filter(s => s.pinned).map(s => (
+          <SnippetCard key={s.id} snippet={s} onDelete={deleteSnippet} onEdit={editSnippet} onPin={togglePin} />
+        ))}
+        </div>
+        </div>
+        
+        <div className='AllSection'>
+        <h2>📝 All Snippets</h2>
+        <div className="SnippetList2">
+          {snippets.map(s => (
+          <SnippetCard key={s.id} snippet={s} onDelete={deleteSnippet} onEdit={editSnippet} onPin={togglePin} />
+        ))}
+        </div>
+        </div>
 
-      <h2>📌 Pinned Snippets</h2>
-      <div className="SnippetList">
-        {snippets.filter(s => s.pinned).map(s => (
-        <SnippetCard key={s.id} snippet={s} onDelete={deleteSnippet} onEdit={editSnippet} onPin={togglePin} />
-      ))}
-      </div>
-
-      <h2>📝 All Snippets</h2>
-      <div className="SnippetList">
-        {snippets.map(s => (
-        <SnippetCard key={s.id} snippet={s} onDelete={deleteSnippet} onEdit={editSnippet} onPin={togglePin} />
-      ))}
-      </div>
+      </div>  
     </div> 
   );
 }

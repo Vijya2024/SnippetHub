@@ -8,6 +8,10 @@ Here’s the updated `README.md`:
 
 **SnippetHub** is a React-based application that allows users to save, view, and manage small pieces of information—like code snippets, notes, or links. It’s fully client-side, using React's `useState` for state management, with no backend or external storage.
 
+## 🌐 Live Demo
+
+🔗 https://snippethub-2pdc.vercel.app
+
 ## 🚀 Features
 
 * ✅ Add and save new snippets with title, content, and category
